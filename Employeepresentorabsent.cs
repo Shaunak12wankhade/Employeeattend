@@ -8,21 +8,36 @@ namespace Empattendance
 {
     class Program
     {
-        static void Main(string[] args)
+         public class UC2_EmpWage
         {
-            //constants
-            int IS_PRESENT = 1;
-
-            //Predefined Random class for generating random values
-            Random random = new Random();
-            //Next method() 0-initial value,2-number of elements from 0
-            int empcheck = random.Next(0, 2);
-            //selection statement
-            if (empcheck == IS_PRESENT)
-                Console.WriteLine("Employee is present");
-            else
-                Console.WriteLine("Employee is Absent");
+            public static void EmpWage()
+            {
+                //Constants
+                int IS_FULL_TIME = 1;
+                int EMP_RATE_PER_HOUR = 20;
+                //Variables
+                int empHrs = 0;
+                int empWage = 0;
+                Random random = new Random();
+                //Computation
+                int empCheck = random.Next(0, 2);
+                if (empCheck == IS_FULL_TIME)
+                {
+                    Console.WriteLine("Employee is present");
+                    empHrs = 8;
+                }
+                else
+                {
+                    Console.WriteLine("Employee is Absent");
+                    empHrs = 0;
+                }
+                empWage = empHrs * EMP_RATE_PER_HOUR;
+                Console.WriteLine("Emp Wage is="+ empWage);
                 Console.Read();
+            }
         }
     }
+
 }
+  
+
